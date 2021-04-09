@@ -30,6 +30,10 @@ public class GameMain : MonoBehaviour {
     private void StartGame()
     {
         BirdControl control = bird.GetComponent<BirdControl>();
+        // Added by jameel Qureshi to remove the error of dying before start
+        control.canTriggerEnter = true;
+
+
         control.inGame = true;
         control.JumpUp();
 

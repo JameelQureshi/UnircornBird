@@ -72,9 +72,14 @@ public class BirdControl : MonoBehaviour {
 			transform.GetComponent<Rigidbody2D>().rotation = -90;
 		}
 	}
-
+    public bool canTriggerEnter=false;
 	void OnTriggerEnter2D (Collider2D other)
 	{
+
+        if (!canTriggerEnter)
+            return;
+
+        Debug.Log(other.name);
 		if (other.name == "land" || other.name == "pipe_up" || other.name == "pipe_down")
 		{
             if (!dead)
