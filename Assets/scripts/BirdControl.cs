@@ -117,6 +117,8 @@ public class BirdControl : MonoBehaviour {
 	
 	public void GameOver()
 	{
+
+        Debug.Log("Game Over");
 		dead = true;
         Game_Over_image.SetActive(true);
         MainMenu.SetActive(true);
