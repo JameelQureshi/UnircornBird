@@ -20,8 +20,12 @@ public class ImageSave : MonoBehaviour
 
     public void TakeScreenshot()
     {
-        string filePath = Path.Combine(Application.persistentDataPath, "NFT_" + ".png");
-        File.WriteAllBytes(filePath, ToTexture2D(texture).EncodeToPNG());
+        string filePath = Path.Combine(Application.persistentDataPath, "Claimmate" + ".png");
+        //File.WriteAllBytes(filePath, ToTexture2D(texture).EncodeToPNG());
+
+       // new NativeShare().AddFile(filePath).Share();
+        NativeGallery.Permission permission = NativeGallery.SaveImageToGallery(ToTexture2D(texture).EncodeToPNG(), "Roofs & Ladders", "Image.png", (success, path) => Debug.Log("Media save result: " + success + " " + path));
+
         Debug.Log(filePath);
     }
 
