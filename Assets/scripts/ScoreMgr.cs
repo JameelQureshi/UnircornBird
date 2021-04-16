@@ -32,25 +32,22 @@ public class ScoreMgr : MonoBehaviour
 	}
 
 
-	void Update()
-	{
-		if(nowScore > highscore)
-		{ 
-		highscore = nowScore;
-	    HigheText.text =nowScore.ToString();
-	    PlayerPrefs.SetInt("highscore", highscore);
-        }
-        else if(nowScore <= highscore)
-        {
+	public void SetHighScore()
+    {
+		if (nowScore > highscore)
+		{
+			highscore = nowScore;
+			HigheText.text = nowScore.ToString();
+			PlayerPrefs.SetInt("highscore", highscore);
+			AuthManager.instance.UpdateScore(highscore);
+		}
+		else if (nowScore <= highscore)
+		{
 			//highscore = PlayerPrefs.GetInt("highscore", highscore);
 			HigheText.text = highscore.ToString();
 		}
-		
-		
-		
-		//ghscore = nowScore;
-		//gheText.text = nowScore.ToString();
 	}
+
 
 	public void AddScore()
 	{

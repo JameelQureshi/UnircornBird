@@ -19,6 +19,8 @@ public class BirdControl : MonoBehaviour {
     public GameObject HighScore;
 
 
+    //public ScoreMgr scoreMgr;
+
     public AudioClip jumpUp;
     public AudioClip hit;
     public AudioClip score;
@@ -156,5 +158,7 @@ public class BirdControl : MonoBehaviour {
             print("infinity");
 
         }
+
+        ScoreMgr.Instance.SetHighScore();
     }
 }
