@@ -126,4 +126,10 @@ public class UIInputManager : MonoBehaviour
             return false;
     }
 
+    public void LogOut()
+    {
+        PlayerPrefs.DeleteAll();
+        signInPanel.SetActive(true);
+    }
+
 }

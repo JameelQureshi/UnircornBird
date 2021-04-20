@@ -139,9 +139,14 @@ public class AuthManager : MonoBehaviour
                 }
                 else
                 {
+
+                    string[] loginResult = www.downloadHandler.text.Split(',');
                     Debug.Log("User Logged In");
-                    int.TryParse(www.downloadHandler.text, out int id);
+                    int.TryParse(loginResult[0], out int id);
+                    int.TryParse(loginResult[1], out int highscore);
                     UserId = id;
+                    PlayerPrefs.SetInt("highscore", highscore);
+
                     Debug.Log(UserId);
                     signInPanel.SetActive(false);
                 }
@@ -206,6 +211,7 @@ public class AuthManager : MonoBehaviour
                 else
                 {
                     Debug.Log("Scores: "+ www.downloadHandler.text);
+                    LeaderBoardManager.instance.CreateScoreBoard(www.downloadHandler.text);
                 }
 
             }
