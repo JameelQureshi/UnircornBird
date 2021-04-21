@@ -20,7 +20,8 @@ public class AuthManager : MonoBehaviour
     }
 
 
-    readonly string BASE_URL = "https://jameelqureshi.xyz/UnicronBird/";
+    //readonly string BASE_URL = "https://jameelqureshi.xyz/UnicronBird/";
+    readonly string BASE_URL = "https://unicorn.claimmate.com/";
 
     public GameObject signUpPanel;
     public GameObject signInPanel;
