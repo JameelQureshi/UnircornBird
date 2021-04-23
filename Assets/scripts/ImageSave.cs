@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ImageSave : MonoBehaviour
 {
     public RenderTexture texture;
+    public Camera uiCamera;
 
     // Update is called once per frame
     void Update()
@@ -20,11 +21,24 @@ public class ImageSave : MonoBehaviour
 
     public void TakeScreenshot()
     {
-        string filePath = Path.Combine(Application.persistentDataPath, "Claimmate" + ".png");
-        //File.WriteAllBytes(filePath, ToTexture2D(texture).EncodeToPNG());
+        
+        uiCamera.targetTexture = texture;
+        StartCoroutine(Capture());
+    }
 
-       // new NativeShare().AddFile(filePath).Share();
-        NativeGallery.Permission permission = NativeGallery.SaveImageToGallery(ToTexture2D(texture).EncodeToPNG(), "Roofs & Ladders", "Image.png", (success, path) => Debug.Log("Media save result: " + success + " " + path));
+
+    IEnumerator Capture()
+    {
+        yield return new WaitForEndOfFrame();
+        string filePath = Path.Combine(Application.persistentDataPath, "Claimmate" + ".png");
+
+#if UNITY_EDITOR
+        File.WriteAllBytes(filePath, ToTexture2D(texture).EncodeToJPG());
+#endif
+        // new NativeShare().AddFile(filePath).Share();
+        uiCamera.targetTexture = null;
+      
+        NativeGallery.Permission permission = NativeGallery.SaveImageToGallery(ToTexture2D(texture).EncodeToJPG(), "Roofs & Ladders", "Image.png", (success, path) => Debug.Log("Media save result: " + success + " " + path));
 
         Debug.Log(filePath);
     }

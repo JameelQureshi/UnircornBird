@@ -9,6 +9,7 @@ public class BirdControl : MonoBehaviour {
     public GameObject scoreMgr;
     public GameObject Game_Over_image;
     public GameObject Game_Over_RenderCanvas;
+    public GameObject uiCamera;
     public GameObject MainMenu;
     public GameObject Restart;
     public GameObject Panel;
@@ -130,6 +131,7 @@ public class BirdControl : MonoBehaviour {
 		dead = true;
         Game_Over_image.SetActive(true);
         Game_Over_RenderCanvas.SetActive(true);
+        uiCamera.SetActive(true);
         MainMenu.SetActive(true);
         Restart.SetActive(true);
         Panel.SetActive(true);
