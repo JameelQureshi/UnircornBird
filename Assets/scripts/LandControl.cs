@@ -10,7 +10,7 @@ public class LandControl : MonoBehaviour {
         // land continue moving
         landSequence = DOTween.Sequence();
 
-        landSequence.Append(transform.DOMoveX(transform.position.x - 0.48f, 0.5f).SetEase(Ease.Linear))
+        landSequence.Append(transform.DOMoveX(transform.position.x - 0.62f, 0.5f).SetEase(Ease.Linear))
             .Append(transform.DOMoveX(transform.position.x, 0f).SetEase(Ease.Linear))
             .SetLoops(-1);
     }
