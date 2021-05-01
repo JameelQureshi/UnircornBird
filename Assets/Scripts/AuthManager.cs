@@ -107,6 +107,7 @@ public class AuthManager : MonoBehaviour
                     UserId = id;
                     Debug.Log(UserId);
                     signUpPanel.SetActive(false);
+                    signInPanel.SetActive(false);
                 }
 
             }

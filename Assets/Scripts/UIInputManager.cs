@@ -45,6 +45,11 @@ public class UIInputManager : MonoBehaviour
     }
 
 
+    public void CreateGuest()
+    {
+        AuthManager.instance.CreateUser("","", "");
+    }
+
     public void CreateUser()
     {
         if (nameInput.text == "")
