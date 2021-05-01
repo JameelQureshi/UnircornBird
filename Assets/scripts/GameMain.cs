@@ -13,6 +13,8 @@ public class GameMain : MonoBehaviour {
 
     private bool gameStarted = false;
 
+    public bool is3D=false;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -20,15 +22,27 @@ public class GameMain : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!gameStarted && Input.GetButtonDown("Fire1"))
+        if (!gameStarted && Input.GetButtonDown("Fire1") && !is3D)
         {
             gameStarted = true;
             StartGame();
         }
     }
 
+    public void OnButtonPushed()
+    {
+        if (!gameStarted)
+        {
+            gameStarted = true;
+            StartGame();
+        }
+    }
+
+
     private void StartGame()
     {
+        Debug.Log("Function Runing");
+
         BirdControl control = bird.GetComponent<BirdControl>();
         // Added by jameel Qureshi to remove the error of dying before start
         control.canTriggerEnter = true;
