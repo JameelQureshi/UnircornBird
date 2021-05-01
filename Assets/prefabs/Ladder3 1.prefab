@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1071955726269757217}
   - component: {fileID: 7766400230056069774}
   - component: {fileID: 8952318994824285736}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pipe_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,6 +47,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -625,7 +626,7 @@ GameObject:
   - component: {fileID: 3955079340040358089}
   - component: {fileID: 3955079340027473615}
   - component: {fileID: 6679179323690039265}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pipe_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,6 +662,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -773,7 +775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3955079340040358091}
   - component: {fileID: 3955079340043830893}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pass_trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -832,7 +834,7 @@ GameObject:
   - component: {fileID: 3955079340034384141}
   - component: {fileID: 3955079340044966157}
   - component: {fileID: -125379376121483695}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ladder3 1
   m_TagString: movable
   m_Icon: {fileID: 0}
@@ -917,7 +919,7 @@ GameObject:
   - component: {fileID: 3955079340040358095}
   - component: {fileID: 3955079340027473613}
   - component: {fileID: 3355972381861962585}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pipe_up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -953,6 +955,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
