@@ -35,13 +35,10 @@ public class UIInputManager : MonoBehaviour
 
         if (AuthManager.UserId == 0)
         {
-            signInPanel.SetActive(true);
+            AuthManager.instance.CreateUser("", "", "");
 
         }
-        else
-        {
-            signInPanel.SetActive(false);
-        }
+        
     }
 
 
